@@ -1,21 +1,15 @@
 # Project 3: Spots
 
-### Overview  
+This project is designed to be responsive on the three most common screen sizes (desktop, tablet and smartphone). It's a series of images and is designed so that whether the screen size expands or (and especially) shrinks, there is no horizontal scroll bar, just a vertical one.
+Besides the basics of designing a page (header, body, footer) and the various ways you can style a page (colors, fonts...ect), this webpage also has various buttons as well as media queries, which enable the page to fit the various size screens in a way that looks good.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
+**Figma**
+
+- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
 **Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+ ![alt text](./images%20/demo/example%201.png)
+![alt text](./images%20/demo/example%202.png)
+
+[def]: ./images/demo/example%201.png
+[def2]: ./images%20/demo/example%202.png
