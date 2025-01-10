@@ -1,6 +1,7 @@
 .footer {
   background-color: #fcf5e5;
-  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -8,7 +9,7 @@
   font-size: 16px;
   line-height: 16px;
   padding-bottom: 60px;
-  border-top: 1px rgba(33, 33, 33, 0.4) solid;
+  border-top: 1px #21212166 solid;
 }
 
 @media screen and (max-width: 627px) {
@@ -16,5 +17,7 @@
     text-align: center;
     margin: 60px 108px;
     align-items: center;
+    width: 100%;
+    margin: auto 0;
   }
 }
