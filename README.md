@@ -16,3 +16,5 @@ Besides the basics of designing a page (header, body, footer) and the various wa
 
 https://drive.google.com/drive/u/0/folders/14TqVP9Fppp_tmxYhC-7oKO6r_VTXYgX-
 above is the link to my video for the project.
+
+https://christiancoder91.github.io/spots and then follow this guide
