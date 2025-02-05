@@ -7,9 +7,11 @@
 }
 
 .profile__avatar {
-  margin: 0 20px 12px;
+  margin: 0 20px 0 0;
   width: 190px;
   height: 190px;
+  border-radius: 8px;
+  margin: 0 20px 0 0;
 }
 
 .profile__column {
@@ -24,7 +26,6 @@
   line-height: 1;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-clamp: 3;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -39,7 +40,6 @@
   line-height: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-clamp: 3;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -49,19 +49,26 @@
 .profile__edit-btn {
   display: flex;
   align-items: center;
-  margin-top: 114px;
-  margin-right: auto;
-  margin-bottom: auto;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: auto;
   margin-left: 20px;
-  background-color: #fcf5e5;
+  background-color: transparent;
   opacity: 70%;
   border-style: none;
+  gap: 8px;
 }
 
 .profile__add-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
   gap: 8px;
   margin-top: auto;
   margin-left: auto;
@@ -69,10 +76,8 @@
   height: 52px;
   border-radius: 8px;
   background-color: #212121;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 16px;
   color: #fcf5e5;
+  border-style: none;
 }
 
 @media screen and (max-width: 627px) {
@@ -86,8 +91,7 @@
   .profile__avatar {
     width: 80px;
     height: 80px;
-    margin-left: 0;
-    margin: 20px 104px 12px;
+    margin: 20px auto 12px;
   }
 
   .profile__column {
@@ -106,11 +110,8 @@
   }
 
   .profile__edit-btn {
-    margin: 32px 90.33px 20px;
+    margin: 32px auto 20px;
     padding: 0;
-    background-color: #fcf5e5;
-    opacity: 70%;
-    border-style: none;
   }
 
   .profile__add-btn {
