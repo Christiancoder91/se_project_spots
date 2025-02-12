@@ -16,7 +16,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 413px;
+  max-width: 353px;
   margin: 0;
 }
 
@@ -58,7 +58,6 @@
 
   .card__content {
     width: 100%;
-    margin-top: 18px;
     margin-bottom: 20px;
   }
 }
