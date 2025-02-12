@@ -14,7 +14,8 @@ Besides the basics of designing a page (header, body, footer) and the various wa
 [def]: ./images/demo/example%201.png
 [def2]: ./images%20/demo/example%202.png
 
-https://drive.google.com/drive/u/0/folders/14TqVP9Fppp_tmxYhC-7oKO6r_VTXYgX-
-above is the link to my video for the project.
+https://drive.google.com/file/d/16KxCdvHfff4HmU-6uWMX0h3gSMyDfCYX/view?usp=drive_link
+Link to video for project (the link is working on my end so if it's still not working for you, I'm not sure what to do to fix it.)
 
-https://christiancoder91.github.io/spots and then follow this guide
+https://github.com/Christiancoder91/se_project_spots
+link to repository on github.
