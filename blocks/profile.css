@@ -58,7 +58,6 @@
   line-height: 16px;
   color: #212121;
   margin-top: auto;
-  margin-left: 20px;
   background-color: transparent;
   opacity: 70%;
   border-style: none;
@@ -105,7 +104,7 @@
   .profile__avatar {
     width: 80px;
     height: 80px;
-    margin: 20px auto 12px;
+    margin: 0 auto 12px;
   }
 
   .profile__column {

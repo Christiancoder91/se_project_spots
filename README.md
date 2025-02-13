@@ -16,6 +16,3 @@ Besides the basics of designing a page (header, body, footer) and the various wa
 
 https://drive.google.com/file/d/16KxCdvHfff4HmU-6uWMX0h3gSMyDfCYX/view?usp=drive_link
 Link to video for project (the link is working on my end so if it's still not working for you, I'm not sure what to do to fix it.)
-
-https://github.com/Christiancoder91/se_project_spots
-link to repository on github.
