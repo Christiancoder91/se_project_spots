@@ -37,6 +37,12 @@
   justify-content: center;
 }
 
+.modal__close-btn:hover {
+  cursor: pointer;
+  color: #212121;
+  opacity: 0.7;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -56,7 +62,7 @@
   font-size: 16px;
   line-height: 17.6px;
   color: #212121;
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 .modal__input {
@@ -65,8 +71,14 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
+  border-radius: 8px;
   color: #212121;
-  opacity: 30%;
+  opacity: 0.4;
+}
+
+.modal__input:hover {
+  cursor: pointer;
+  border-color: #212121;
 }
 
 .modal__submit-btn {
@@ -79,6 +91,11 @@
   background-color: #212121;
   color: #fcf5e5;
   border-radius: 8px;
+}
+
+.modal__submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 627px) {

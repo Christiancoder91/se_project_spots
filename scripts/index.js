@@ -25,8 +25,6 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
-
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -56,6 +54,19 @@ function getCardElement(data) {
 
   return cardElement;
 }
+
+const inputs = document.querySelectorAll(".modal__input");
+
+inputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    if (input.value.trim() !== "") {
+      input.style.color = "#212121";
+      input.style.opacity = "1";
+    } else {
+      input.style.opacity = "0.4";
+    }
+  });
+});
 
 function openModal() {
   editModalNameInput.value = profileName.textContent;
