@@ -35,12 +35,13 @@
   height: 40px;
   display: flex;
   justify-content: center;
+  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
   cursor: pointer;
   color: #212121;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .modal__title {
