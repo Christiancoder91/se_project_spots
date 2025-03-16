@@ -37,7 +37,7 @@
   justify-content: center;
   opacity: 0.4;
   border: none;
-  background-color: none;
+  background-color: transparent;
 }
 
 .modal__close-btn:hover {
