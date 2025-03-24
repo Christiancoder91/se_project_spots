@@ -83,12 +83,12 @@ editModalCloseBtn.addEventListener("click", () => {
   closeModal(editModal);
 });
 
-// cardModalBtn.addEventListener("click", () => {
-//   openModal(cardModal);
-// });
-// cardModalCloseBtn.addEventListener("click", () => {
-//   closeModal(cardModal);
-// });
+cardModalBtn.addEventListener("click", () => {
+  openModal(cardModal);
+});
+cardModalCloseBtn.addEventListener("click", () => {
+  closeModal(cardModal);
+});
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
