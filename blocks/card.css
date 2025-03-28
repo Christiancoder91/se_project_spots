@@ -41,16 +41,28 @@
 .card__like-button:hover {
   cursor: pointer;
   color: #212121;
-  opacity: 0.7;
+  opacity: 1;
 }
 
-.card__like-button__liked {
+.card__like-button_liked {
   background-image: url(../images/like-icon-liked.svg);
   opacity: 1;
 }
 
-.card__like-button__liked:hover {
+.card__like-button_liked:hover {
   background-image: url(../images/liked-icon-liked-hover.svg);
+}
+
+.card__delete-button {
+  background-image: url(../images/delete-default-button.svg);
+  width: 32px;
+  height: 32px;
+  border: none;
+}
+
+.card__delete-button:hover {
+  background-image: url(../images/delete-hover-button.svg);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
