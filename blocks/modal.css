@@ -18,6 +18,9 @@
 }
 
 .modal__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   padding: 32px 50px;
   max-width: 730px;
@@ -29,14 +32,14 @@
 
 .modal__container_type_preview {
   padding: 0;
-  /* background-color: transparent; */
-  max-width: 75vw;
+  background-color: transparent;
 }
 
 .modal__image {
   width: 100%;
-  max-height: 75vh;
   object-fit: contain;
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
 .modal__close-btn {
