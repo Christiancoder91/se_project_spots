@@ -80,7 +80,6 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardDeleteBtn.classList.toggle("card__delete-button");
     cardElement.remove();
   });
 
@@ -108,9 +107,9 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(cardNameInput.value);
   console.log(cardLinkInput.value);
-  const InputValues = { name: cardNameInput.value, link: cardLinkInput.value };
+  const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(InputValues);
-
+  // evt.target.reset();
   cardsList.prepend(cardElement);
   closeModal(cardModal);
 }
