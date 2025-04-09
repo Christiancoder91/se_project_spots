@@ -74,9 +74,9 @@ function getCardElement(data) {
 
   cardImageEl.addEventListener("click", () => {
     openModal(previewModal);
-    previewModalCaptionEl.textContent = data.name;
     previewModalImageEl.src = data.link;
-    // previewModalCaptionEl.alt = data.name;
+    previewModalImageEl.alt = `Enlarged view of ${data.name}`;
+    previewModalCaptionEl.textContent = data.name;
   });
 
   cardDeleteBtn.addEventListener("click", () => {
@@ -108,8 +108,8 @@ function handleAddCardSubmit(evt) {
   console.log(cardNameInput.value);
   console.log(cardLinkInput.value);
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
-  const cardElement = getCardElement(InputValues);
-  // evt.target.reset();
+  const cardElement = getCardElement(inputValues);
+  evt.target.reset();
   cardsList.prepend(cardElement);
   closeModal(cardModal);
 }
