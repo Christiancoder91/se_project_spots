@@ -1,3 +1,5 @@
+// TODO - pass settings object to the validation functions that are called in this file
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -48,6 +50,7 @@ const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageEl = previewModal.querySelector(".modal__image");
+const cardSubmitButton = cardModal.querySelector(".modal__submit-btn");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 
@@ -91,9 +94,18 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
-  console.log("Before closing:", modal.classList);
   modal.classList.remove("modal_opened");
-  console.log("After closing:", modal.classList);
+  const form = modal.querySelector(".modal__form");
+  if (form) {
+    form.reset();
+    if (form) {
+      form.reset();
+      const inputList = form.querySelectorAll(".modal__input");
+      inputList.forEach((inputElement) => {
+        hideInputError(form, inputElement);
+      });
+    }
+  }
 }
 
 function handleEditFormSubmit(evt) {
@@ -110,6 +122,7 @@ function handleAddCardSubmit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   evt.target.reset();
+  disableButton(cardSubmitButton, settings);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
 }

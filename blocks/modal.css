@@ -128,13 +128,24 @@
   border-radius: 8px;
 }
 
+.modal__input::placeholder {
+  color: rgba(33, 33, 33, 0.3);
+}
+
 .modal__input:hover {
   cursor: pointer;
   border: 1px solid rgba(33, 33, 33, 1);
 }
 
-.modal__input::placeholder {
-  color: rgba(33, 33, 33, 0.3);
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__error {
+  display: block;
+  /* margin-top: 8px; */
+  color: red;
+  /* // TODO - correct color and font sizes// */
 }
 
 .modal__submit-btn {
