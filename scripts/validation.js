@@ -7,25 +7,30 @@ const settings = {
   errorClass: "modal__error_visible",
 };
 
-const showInputError = (formElement, inputElement, errorMsg) => {
+const showInputError = (formElement, inputElement, errorMsg, settings) => {
   const errorMsgID = inputElement.id + "-error";
   const errorMsgEl = document.querySelector("#" + errorMsgID);
   errorMsgEl.textContent = errorMsg;
-  inputElement.classList.add("modal__input_type_error");
+  inputElement.classList.add(settings.inputErrorClass);
 };
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, settings) => {
   const errorMsgID = inputElement.id + "-error";
   const errorMsgEl = document.querySelector("#" + errorMsgID);
   errorMsgEl.textContent = "";
-  inputElement.classList.remove("modal__input_type_error");
+  inputElement.classList.remove(settings.inputErrorClass);
 };
 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, settings) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(
+      formElement,
+      inputElement,
+      inputElement.validationMessage,
+      settings
+    );
   } else {
-    hideInputError(formElement, inputElement);
+    hideInputError(formElement, inputElement, settings);
   }
 };
 
@@ -35,22 +40,21 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, settings) => {
   console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
-    disableButton(buttonElement);
+    buttonElement.disabled = true;
+    buttonElement.classList.add(settings.inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
-    // TODO remove the disabled class
+    buttonElement.classList.remove(settings.inactiveButtonClass);
   }
 };
 
 const disableButton = (buttonElement, settings) => {
   buttonElement.disabled = true;
-  // TODO add a modifier class to the button element to make it gray - don't forget the CSS
+  buttonElement.classList.add(settings.inactiveButtonClass);
 };
-
-// TODO - use the settings object in all functions instead of hard-coded strings
 
 const setEventListeners = (formElement, settings) => {
   const inputList = Array.from(
@@ -64,7 +68,7 @@ const setEventListeners = (formElement, settings) => {
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
-      checkInputValidity(formElement, inputElement);
+      checkInputValidity(formElement, inputElement, settings);
       toggleButtonState(inputList, buttonElement, settings);
     });
   });
@@ -78,3 +82,5 @@ const enableValidation = (settings) => {
 };
 
 enableValidation(settings);
+
+export { settings, disableButton };

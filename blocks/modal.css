@@ -143,9 +143,12 @@
 
 .modal__error {
   display: block;
-  /* margin-top: 8px; */
-  color: red;
-  /* // TODO - correct color and font sizes// */
+  margin-top: 0;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  opacity: 0.8;
 }
 
 .modal__submit-btn {
@@ -163,6 +166,12 @@
 .modal__submit-btn:hover {
   cursor: pointer;
   opacity: 0.7;
+}
+
+.modal__submit-btn:disabled,
+.modal__button_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 627px) {

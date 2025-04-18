@@ -1,4 +1,4 @@
-// TODO - pass settings object to the validation functions that are called in this file
+import { settings, disableButton } from "./validation.js";
 
 const initialCards = [
   {
@@ -35,7 +35,6 @@ const profileDescription = document.querySelector(".profile__description");
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector(".modal__form");
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
-console.log("Edit modal close button:", editModalCloseBtn);
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
@@ -44,7 +43,6 @@ const editModalDescriptionInput = editModal.querySelector(
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
 const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
-console.log("Card modal close button:", cardModalCloseBtn);
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
@@ -91,19 +89,27 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
   const form = modal.querySelector(".modal__form");
   if (form) {
     form.reset();
-    if (form) {
-      form.reset();
-      const inputList = form.querySelectorAll(".modal__input");
-      inputList.forEach((inputElement) => {
-        hideInputError(form, inputElement);
-      });
+    const inputList = form.querySelectorAll(".modal__input");
+    inputList.forEach((inputElement) => {
+      hideInputError(form, inputElement, settings);
+    });
+  }
+}
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    if (openModal) {
+      closeModal(openModal);
     }
   }
 }
@@ -117,8 +123,6 @@ function handleEditFormSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(cardNameInput.value);
-  console.log(cardLinkInput.value);
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   evt.target.reset();
@@ -133,7 +137,6 @@ profileEditButton.addEventListener("click", () => {
   openModal(editModal);
 });
 editModalCloseBtn.addEventListener("click", () => {
-  console.log("Edit modal close button clicked");
   closeModal(editModal);
 });
 
@@ -141,7 +144,6 @@ cardModalBtn.addEventListener("click", () => {
   openModal(cardModal);
 });
 cardModalCloseBtn.addEventListener("click", () => {
-  console.log("Card modal close button clicked");
   closeModal(cardModal);
 });
 
