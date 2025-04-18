@@ -170,7 +170,7 @@
 
 .modal__submit-btn:disabled,
 .modal__button_disabled {
-  opacity: 0.5;
+  background-color: rgba(33, 33, 33, 0.5);
   cursor: not-allowed;
 }
 
