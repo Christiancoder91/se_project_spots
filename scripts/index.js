@@ -1,5 +1,3 @@
-import { settings, disableButton } from "./validation.js";
-
 const initialCards = [
   {
     name: "Val Thorens",
