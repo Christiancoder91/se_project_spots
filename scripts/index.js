@@ -88,6 +88,10 @@ function getCardElement(data) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscClose);
+  const form = modal.querySelector(".modal__form");
+  if (form) {
+    resetValidation(form);
+  }
 }
 
 function closeModal(modal) {
@@ -96,10 +100,7 @@ function closeModal(modal) {
   const form = modal.querySelector(".modal__form");
   if (form) {
     form.reset();
-    const inputList = form.querySelectorAll(".modal__input");
-    inputList.forEach((inputElement) => {
-      hideInputError(form, inputElement, settings);
-    });
+    resetValidation(form);
   }
 }
 
@@ -109,6 +110,26 @@ function handleEscClose(evt) {
     if (openModal) {
       closeModal(openModal);
     }
+  }
+}
+
+function resetValidation(formElement) {
+  const inputElements = formElement.querySelectorAll(".modal__input");
+
+  inputElements.forEach((input) => {
+    input.classList.remove("modal__input_type_error");
+
+    const errorMsgID = input.id + "-error";
+    const errorMsgEl = formElement.querySelector("#" + errorMsgID);
+    if (errorMsgEl) {
+      errorMsgEl.textContent = "";
+    }
+  });
+
+  const submitButton = formElement.querySelector(".modal__submit-btn");
+  if (submitButton) {
+    submitButton.classList.add("modal__button_disabled");
+    submitButton.disabled = true;
   }
 }
 
@@ -132,7 +153,6 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
-  evt.target.reset();
   disableButton(cardSubmitButton, settings);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
