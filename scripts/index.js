@@ -90,7 +90,7 @@ function openModal(modal) {
   document.addEventListener("keydown", handleEscClose);
   const form = modal.querySelector(".modal__form");
   if (form) {
-    resetValidation(form);
+    resetValidation(form, settings);
   }
 }
 
@@ -100,7 +100,6 @@ function closeModal(modal) {
   const form = modal.querySelector(".modal__form");
   if (form) {
     form.reset();
-    resetValidation(form);
   }
 }
 
@@ -110,26 +109,6 @@ function handleEscClose(evt) {
     if (openModal) {
       closeModal(openModal);
     }
-  }
-}
-
-function resetValidation(formElement) {
-  const inputElements = formElement.querySelectorAll(".modal__input");
-
-  inputElements.forEach((input) => {
-    input.classList.remove("modal__input_type_error");
-
-    const errorMsgID = input.id + "-error";
-    const errorMsgEl = formElement.querySelector("#" + errorMsgID);
-    if (errorMsgEl) {
-      errorMsgEl.textContent = "";
-    }
-  });
-
-  const submitButton = formElement.querySelector(".modal__submit-btn");
-  if (submitButton) {
-    submitButton.classList.add("modal__button_disabled");
-    submitButton.disabled = true;
   }
 }
 
@@ -156,11 +135,13 @@ function handleAddCardSubmit(evt) {
   disableButton(cardSubmitButton, settings);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
+  cardForm.reset();
 }
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editFormElement, settings);
   openModal(editModal);
 });
 editModalCloseBtn.addEventListener("click", () => {
