@@ -97,10 +97,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscClose);
-  const form = modal.querySelector(".modal__form");
-  if (form) {
-    form.reset();
-  }
+  form.reset();
 }
 
 function handleEscClose(evt) {
