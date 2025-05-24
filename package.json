@@ -1,0 +1,35 @@
+{
+  "name": "se_projects_spot",
+  "version": "1.0.0",
+  "description": "This project is designed to be responsive on the three most common screen sizes (desktop, tablet and smartphone). It's a series of images and is designed so that whether the screen size expands or (and especially) shrinks, there is no horizontal scroll bar, just a vertical one. Besides the basics of designing a page (header, body, footer) and the various ways you can style a page (colors, fonts...ect), this webpage also has various buttons as well as media queries, which enable the page to fit the various size screens in a way that looks good.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --mode development",
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christiancoder91/spots.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christiancoder91/spots/issues"
+  },
+  "homepage": "https://github.com/Christiancoder91/spots#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}
