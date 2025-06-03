@@ -1,3 +1,5 @@
+import { previewImageModal } from "../utils/constants";
+
 export class Card {
   constructor(data, templateSelector, handleImageClick) {
     this._name = data.name;
@@ -40,7 +42,13 @@ export class Card {
   }
 }
 
-export function getCardElement(data, userId, handleLike, handleDeleteClick) {
+export function getCardElement(
+  data,
+  userId,
+  handleLike,
+  handleDeleteClick,
+  handleImageClick
+) {
   const cardTemplate = document.querySelector("#card-template");
   console.log("Card template:", cardTemplate); // Add this
   console.log("Card Data:", data);
@@ -71,6 +79,9 @@ export function getCardElement(data, userId, handleLike, handleDeleteClick) {
   };
 
   cardImageEl.alt = data.name;
+  cardImageEl.addEventListener("click", () =>
+    handleImageClick(data.link, data.name)
+  );
   cardTitleEl.textContent = data.name;
 
   const likesCount = data.likes ? data.likes.length : 0;

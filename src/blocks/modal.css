@@ -71,8 +71,8 @@
   height: 40px;
   border: none;
   position: absolute;
-  top: -45px;
-  right: -45px;
+  top: 32px;
+  right: 50px;
   padding: 0;
   cursor: pointer;
 }
@@ -84,7 +84,7 @@
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(../images/close-icon-no-padding.svg);
+  background-image: url("../images/close.svg");
   position: absolute;
   top: 0;
   right: -45px;
