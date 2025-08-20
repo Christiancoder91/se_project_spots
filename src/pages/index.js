@@ -111,6 +111,7 @@ function handleImageClick(imageSrc, imageAlt) {
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   api
     .editUserInfo({
       name: editModalNameInput.value,
@@ -119,12 +120,12 @@ function handleEditFormSubmit(evt) {
     .then((data) => {
       profileName.textContent = editModalNameInput.value;
       profileDescription.textContent = editModalDescriptionInput.value;
+      editModalInstance.close();
     })
     .catch(console.error)
     .finally(() => {
       submitBtn.textContent = "Save";
     });
-  editModalInstance.close();
 }
 
 function handleAddCardSubmit(evt) {
@@ -140,7 +141,8 @@ function handleAddCardSubmit(evt) {
         userId,
         handleLike,
         handleDeleteClick,
-        handleImageClick
+        handleImageClick,
+        cardModalInstance.close()
       );
       cardsList.prepend(cardElement);
       cardForm.reset();
@@ -149,7 +151,6 @@ function handleAddCardSubmit(evt) {
     .finally(() => {
       submitBtn.textContent = "Create";
     });
-  cardModalInstance.close();
 }
 
 function handleAvatarSubmit(evt) {
@@ -162,6 +163,8 @@ function handleAvatarSubmit(evt) {
     .then((data) => {
       profileAvatarImage.src = data.avatar;
       avatarForm.reset();
+      avatarModalInstance.close();
+      console.log("Avatar updated successfully:", data.avatar);
     })
     .catch((err) => {
       console.log(err);
@@ -169,7 +172,6 @@ function handleAvatarSubmit(evt) {
     .finally(() => {
       submitBtn.textContent = "Save";
     });
-  avatarModalInstance.close();
 }
 
 let cardToDelete = null;
@@ -184,12 +186,12 @@ function handleDeleteSubmit(cardElement) {
     .deleteCard(cardId)
     .then(() => {
       cardElement.remove();
+      deleteModalInstance.close();
     })
     .catch((err) => console.error(err))
     .finally(() => {
       submitButton.textContent = "Yes";
     });
-  deleteModalInstance.close();
 }
 function handleDeleteClick(cardElement) {
   cardToDelete = cardElement;

@@ -3,6 +3,7 @@ export class Modal {
     this._modalElement = modalElement;
     this._closeButton = modalElement.querySelector(".modal__close-btn");
     this._handleEscClose = this._handleEscClose.bind(this);
+    this.setEventListeners();
   }
 
   open() {
