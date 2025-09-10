@@ -141,11 +141,11 @@ function handleAddCardSubmit(evt) {
         userId,
         handleLike,
         handleDeleteClick,
-        handleImageClick,
-        cardModalInstance.close()
+        handleImageClick
       );
       cardsList.prepend(cardElement);
       cardForm.reset();
+      cardModalInstance.close();
     })
     .catch((err) => console.error(err))
     .finally(() => {
@@ -209,19 +209,12 @@ function handleLike(evt, cardData) {
   api
     .handleLike(cardData._id, isLiked)
     .then((updatedCard) => {
-      console.log("Inside .then() callback");
-      console.log(updatedCard);
       likeButton.classList.toggle("card__like-button_liked");
-      let newLikesCount;
-      if (updatedCard.isLiked) {
-        newLikesCount = parseInt(likesCountElement.textContent) + 1;
-      } else {
-        newLikesCount = parseInt(likesCountElement.textContent) - 1;
-      }
+      let newLikesCount = updatedCard.likes.length;
       likesCountElement.textContent = newLikesCount;
     })
     .catch((err) => {
-      console.log("API error:", error);
+      console.log("API error:", err);
       console.error(err);
     });
 }
