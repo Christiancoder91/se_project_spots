@@ -61,7 +61,6 @@ export function getCardElement(
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
-  const likesCountElement = cardElement.querySelector(".card__like-count");
 
   cardImageEl.onerror = function () {
     console.log("Original image failed to load for:", data.name);
@@ -85,13 +84,8 @@ export function getCardElement(
   );
   cardTitleEl.textContent = data.name;
 
-  const likesCount = data.likes ? data.likes.length : 0;
-  likesCountElement.textContent = likesCount;
-
-  if (data.likes && Array.isArray(data.likes)) {
-    if (data.likes.some((user) => user._id === userId)) {
-      likeButton.classList.add("card__like-button_liked");
-    }
+  if (data.isLiked) {
+    likeButton.classList.add("card__like-button_liked");
   }
 
   likeButton.addEventListener("click", (evt) => handleLike(evt, data));

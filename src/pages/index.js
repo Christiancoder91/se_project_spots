@@ -201,17 +201,12 @@ function handleDeleteClick(cardElement) {
 function handleLike(evt, cardData) {
   console.log("Like button clicked!");
   const likeButton = evt.target;
-  const likesCountElement = evt.target
-    .closest(".card__like-container")
-    .querySelector(".card__like-count");
   const isLiked = likeButton.classList.contains("card__like-button_liked");
 
   api
     .handleLike(cardData._id, isLiked)
     .then((updatedCard) => {
       likeButton.classList.toggle("card__like-button_liked");
-      let newLikesCount = updatedCard.likes.length;
-      likesCountElement.textContent = newLikesCount;
     })
     .catch((err) => {
       console.log("API error:", err);
